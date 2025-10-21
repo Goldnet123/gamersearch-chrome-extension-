@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "GamerSearch",
+  "version": "2.0",
+  "description": "Deine Gamer-Suchmaschine direkt im neuen Tab",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "icons": {
+    "48": "assets/logo.svg",
+    "128": "assets/logo.svg"
+  },
+  "permissions": ["storage"],
+  "action": {
+    "default_icon": "assets/logo.svg",
+    "default_title": "GamerSearch"
+  }
+}
