@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamerSearch - Dark Mode</title>
+    <style>
+        :root {
+            --bg-color: #1e1e1e;
+            --text-color: #fff;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #fff;
+            --text-color: #000;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 50px;
+            background: linear-gradient(to right, red, purple);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 18px;
+            background: linear-gradient(to right, red, pink);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            max-width: 600px;
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"][data-theme="light"] {
+            background-color: #f0f0f0;
+            border-color: #ccc;
+            color: #000;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: linear-gradient(to right, red, purple);
+            color: white;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, darkred, darkpurple);
+        }
+
+        .tagline {
+            margin-top: 20px;
+            font-size: 18px;
+            background: linear-gradient(to right, red, purple);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        input[type="text"]::placeholder {
+            color: #aaa;
+        }
+
+        .dark-mode-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: linear-gradient(to right, red, purple);
+            color: white;
+            transition: background 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            background: linear-gradient(to right, darkred, darkpurple);
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+<h1>GamerSearch</h1>
+<p>Suche nach deinen Lieblingsspielen mit GamerSearch</p>
+
+<form action="https://www.google.com/search" method="GET">
+    <input type="text" name="q" placeholder="Suchbegriff eingeben...">
+    <button type="submit">Suchen</button>
+</form>
+
+<p class="tagline">Die beste Suchmaschine für Gamer</p>
+
+<button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode deaktivieren</button>
+
+<script>
+    const body = document.body;
+    const toggleButton = document.querySelector('.dark-mode-toggle');
+
+    // Initialisiere den Dark Mode basierend auf localStorage
+    if (localStorage.getItem('theme') === 'light') {
+        body.setAttribute('data-theme', 'light');
+        toggleButton.textContent = 'Dark Mode aktivieren';
+    }
+
+    // Funktion zum Umschalten zwischen Dark und Light Mode
+    function toggleDarkMode() {
+        if (body.getAttribute('data-theme') === 'dark') {
+            body.setAttribute('data-theme', 'light');
+            toggleButton.textContent = 'Dark Mode aktivieren';
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.setAttribute('data-theme', 'dark');
+            toggleButton.textContent = 'Dark Mode deaktivieren';
+            localStorage.setItem('theme', 'dark');
+        }
+    }
+</script>
+
+</body>
+</html>
