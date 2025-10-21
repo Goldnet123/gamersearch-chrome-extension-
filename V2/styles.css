@@ -1,0 +1,110 @@
+/* Standard Dark/* Grundlayout */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Container */
+.container {
+  text-align: center;
+}
+
+.logo {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+#searchInput {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#searchBtn {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Quicklinks */
+.quicklinks {
+  margin-top: 20px;
+}
+
+.quicklinks a {
+  color: #1e90ff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.quicklinks a:hover {
+  text-decoration: underline;
+}
+
+/* Gradient Text */
+.gradient-text {
+  font-weight: bold;
+  background: linear-gradient(to right, red, orange, yellow, green, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dark/Light Mode Farben */
+body.dark-mode {
+  background-color: #0f0f0f;
+  color: #ffffff;
+}
+
+body.dark-mode #searchInput,
+body.dark-mode #searchBtn {
+  background-color: #222222;
+  color: #ffffff;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #0f0f0f;
+}
+
+body.light-mode #searchInput,
+body.light-mode #searchBtn {
+  background-color: #222222;
+  color: #ffffff;
+}
+
+/* Dark/Light Mode Button oben links */
+#modeToggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 9999;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode #modeToggle {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+body.light-mode #modeToggle {
+  background-color: #222222;
+  color: #ffffff;
+}
