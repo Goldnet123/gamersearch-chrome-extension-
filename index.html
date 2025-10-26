@@ -1,2 +1,68 @@
-<a href="Download">Download</a> <br>
-<a href="try.html">Try it(without downloading it)</a>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamersearch</title>
+  <style>
+    body {
+      margin: 0;
+      padding-top: 60px; /* Abstand von oben */
+      display: flex;
+      flex-direction: column; /* Bild und Buttons untereinander */
+      align-items: center;     /* horizontal zentrieren */
+      background-color: black;
+      font-family: Arial, sans-serif;
+    }
+
+    img {
+      max-width: 90%;
+      max-height: 40vh;
+      height: auto;
+    }
+
+    .button-container {
+      margin-top: 20px; /* Abstand zwischen Bild und Buttons */
+      display: flex;
+      gap: 20px; /* Abstand zwischen den Buttons */
+    }
+
+    button {
+      background-color: #0078d7;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+        /* Text unten rechts */
+    .footer {
+      position: fixed;
+      bottom: 10px;
+      right: 20px;
+      font-size: 14px;
+      color: white;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="footer">
+    @Realgamergerman & @Supergamer
+  </div>
+
+  <img src="https://gamersearch.pages.dev/assets/logo.jpg" alt="Beispielbild">
+
+  <div class="button-container">
+<button onclick="window.location.href='https://gamersearch.pages.dev/Download'">Download</button>
+<button onclick="window.location.href='https://gamersearch.pages.dev/try.html'">Try it</button>
+<button onclick="window.location.href='https://gamersearch.pages.dev/'">Home</button>
+  </div>
+</body>
